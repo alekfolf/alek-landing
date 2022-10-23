@@ -1,0 +1,82 @@
+---
+// Component Imports
+import Nav from '../components/Nav.astro';	
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import type { Project } from '../types';
+import '../styles/index.css';
+
+const projects = await Astro.glob<Project>('./project/**/*.md');
+const featuredProject = projects[0]!;
+---
+
+<html lang="en">
+	<head>
+		<MainHead
+			title="AlekFolf"
+			description="AlekFolf: Developer and a furry"/>
+	</head>
+	<body>
+		<Nav/>
+		<header class="hero">
+			<img
+				width="1600"
+				height="1131"
+				id="sona-bg"
+				class="img"
+				src="assets/alek-bg.png"
+				srcset="assets/alek-bg.png"
+				sizes="(max-width: 800px) 800px, (max-width: 1200px) 1200px, (max-width: 1600px) 1600px, (max-width: 2400px) 2400px, 1200px"
+			/>
+			<div class="gradient gradient-background"></div>
+			<div class="overlay" onclick="replace()">
+				<h1 class="title">
+					<span id="title-txt" >ALEK FOLF 🐺🦊</span>
+				</h1>
+				<div class="roles">
+					<span class="role">👩‍💻 App Developer <span class="invert">👩‍💻 Web Developer </span></span>
+					<span class="role">❤️ Furry<span class="invert">❤️ Furry</span></span>
+				</div>
+				<p class="desc">Just a folf on the internet</p>
+				
+			</div>
+			<script client:visible>
+				const species = ["FOLF 🐺🦊", "WOLF? 🐺", "FOX? 🦊"];
+				const speciesURLs = ["assets/alek-bg.png","assets/wolf-bg.jpg","assets/fox-bg.jpg"]
+				const sonaBg = document.querySelector("#sona-bg");
+				var ind = 0;
+				function replace() {
+					let indCurrent = ind++%species.length;
+					document.getElementById("title-txt").innerText = `ALEK ${species[indCurrent]}`;
+					document.getElementsByClassName("desc")[0].innerText = `Just a ${species[indCurrent].toLowerCase().replace(/[🦊🐺]/g, '')} on the internet`;
+					sonaBg.src = speciesURLs[indCurrent];
+					sonaBg.srcset = speciesURLs[indCurrent];
+				}
+			</script>
+		</header>
+		<main class="wrapper">
+			<div class="grid">
+				<div class="section">
+					<h3 class="sectionTitle">Featured post</h3>
+					<PortfolioPreview project={featuredProject} />
+					<div class="buttonContainer">
+						<a href="/posts/" class="button">View All</a>
+					</div>
+				</div>
+				<div class="section">
+					<h3 class="sectionTitle">About me</h3>
+					<p class="bio">
+						<span>Hello!</span> I’m Alek, and this is my website. It was made using{' '}
+						<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
+						a new way to build static sites. This is just an example template.
+					</p>
+					<p>
+						<a href="/about">Read more</a>
+					</p>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

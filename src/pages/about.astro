@@ -1,0 +1,70 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="About | AlekFolf" description="About AlekFolf" />
+		<style>
+			.heroImg {
+				max-height: 24rem;
+				object-fit: cover;
+				overflow: hidden;
+			}
+
+			.heroImg img {
+				width: 100%;
+			}
+
+			.bio {
+				font-size: var(--f-u1);
+				line-height: 2;
+				margin-top: 4em;
+			}
+
+			.wrapper.bio {
+				max-width: 50em;
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1>About Alek</h1>
+			<div class="heroImg">
+				<img
+					width="1400"
+					height="350"
+					src="/assets/alek-bg.png"
+				/>
+			</div>
+			<div class="bio wrapper">
+				<h2>👷🚧 Work in progress site</h2>
+				<h3>Image credits</h3>
+				<ul>
+					<li>Wolf easter egg - Photo by <a href="https://www.pexels.com/photo/white-and-black-wolf-397857/">Steve</a></li>
+					<li>Fox easter egg - Photo by <a href="https://www.pexels.com/photo/brown-fox-walking-on-the-gray-asphalt-road-9681751/">Erik Mclean</a></li>
+					<li>Fursona art - Drawing by <a href="https://twitter.com/TonyDunkel">TonyDunkel</a></li>
+				</ul>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed mattis odio. Nulla consequat mattis eleifend. Nunc porta diam ipsum, at ornare erat suscipit tincidunt. Aenean eu ex nec neque cursus dapibus. Praesent malesuada mauris nec justo lacinia egestas. Donec sollicitudin, enim id condimentum elementum, lorem eros porttitor lorem, molestie scelerisque diam justo quis arcu. Cras id ante non ligula elementum porttitor. Cras quis efficitur ipsum, sed viverra ante. Nam pellentesque vulputate dictum. Ut non diam magna. Duis malesuada, mauris vitae viverra sagittis, turpis nibh hendrerit tortor, in sagittis enim ipsum eu lorem. Aliquam vel lacus eros. In hac habitasse platea dictumst.
+				</p>
+				<p>
+					Curabitur rutrum metus ornare lectus interdum pharetra. Donec tortor mauris, facilisis pulvinar tincidunt at, molestie ac ligula. Aenean fermentum maximus vestibulum. Cras ut convallis est. Praesent efficitur, lacus in porta lobortis, sapien purus bibendum enim, non dignissim nisl lacus at lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam aliquet mauris mattis ante venenatis iaculis. Etiam pharetra lectus ut lectus ultrices molestie. Nulla feugiat nisi vehicula dapibus luctus. Mauris nisl justo, iaculis sed nibh ut, pharetra vulputate ipsum. Donec sollicitudin ac est eu imperdiet. Maecenas vestibulum sem felis, eget laoreet dolor aliquet tincidunt. Donec quam elit, pretium et condimentum sit amet, pulvinar vel augue.
+				</p>
+				<p>
+					Ut at ex est. Vestibulum pharetra ligula at urna dictum, quis placerat sem feugiat. Sed ornare rutrum facilisis. Pellentesque imperdiet, libero vel consequat efficitur, purus odio varius velit, ut vehicula nulla eros quis quam. Nulla id finibus est. Sed ac molestie urna. Duis ac fermentum magna. Donec euismod urna et lectus bibendum rhoncus. Cras tincidunt neque sapien, in semper augue aliquam vitae. Quisque vehicula tincidunt metus, at luctus neque suscipit id. Sed imperdiet dolor in aliquam vestibulum. Maecenas porttitor mi in nulla gravida ullamcorper.
+				</p>
+				<p>
+					Proin aliquet molestie est ut congue. Vestibulum vel malesuada urna. Aliquam non erat est. Proin imperdiet porta ex, at bibendum tortor imperdiet nec. Morbi vel elementum nibh. Aliquam sagittis, risus sit amet tempus lacinia, nulla sem vulputate turpis, non mattis tortor diam ut elit. Nullam posuere, eros sit amet volutpat auctor, dolor orci pellentesque odio, nec fringilla ante nulla in erat. Etiam pulvinar sapien sed sapien sollicitudin, eu consequat arcu egestas. Sed eleifend metus eget laoreet mattis. Praesent accumsan erat egestas, gravida enim vel, congue sem. Praesent augue lorem, lobortis nec nisi sit amet, rutrum bibendum massa.
+				</p>
+				<p>
+					Nunc vitae feugiat massa, non vestibulum lacus. Proin vel mollis nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla accumsan urna non felis venenatis feugiat. In dignissim a tellus eu faucibus. Aliquam ornare nibh sit amet mauris pellentesque varius. Aenean ut orci ipsum. Sed cursus velit et libero dictum, sit amet tempor dolor maximus. Donec maximus volutpat neque et tincidunt. Integer augue odio, pharetra at lectus id, pretium accumsan mi. Pellentesque a consequat ex.
+				</p>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
